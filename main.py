@@ -71,7 +71,7 @@ def draw_hexagon(x: float, y: float, side_len: float, color: str) -> None:
     turtle.fillcolor(color)
     turtle.begin_fill()
 
-    for _ in range(6):
+    for i in range(6):
         turtle.forward(side_len)
         turtle.right(60)
 
@@ -90,36 +90,34 @@ def main() -> None:
 
     # Get user input
     print("Выбор первого цвета:")
-    color1: str = get_color_choice()
+    color1 = get_color_choice()
 
     print("Выбор второго цвета:")
-    color2: str = get_color_choice()
+    color2 = get_color_choice()
 
-    n: int = get_num_hexagons()
+    n = get_num_hexagons()
 
     # Calculate side length to fit in window
-    side_len: float = min(500 / (n * math.sqrt(2.2)), 500 / (n * 1))
+    side_len = min(500 / (n * math.sqrt(2.2)), 500 / (n * 1))
 
     # Calculate total dimensions and starting position
-    total_width: float = n * math.sqrt(2.6) * side_len
-    total_height: float = n * 1.97 * side_len
-    start_x: float = -total_width / 2 + math.sqrt(3) * side_len / 2
-    start_y: float = total_height / 2 - 1.5 * side_len / 2
+    total_width = n * math.sqrt(2.6) * side_len
+    total_height = n * 1.97 * side_len
+    start_x = -total_width / 2 + math.sqrt(3) * side_len / 2
+    start_y = total_height / 2 - 1.5 * side_len / 2
 
     # Draw the hexagon pattern
     for row in range(n):
         for col in range(n):
-            # Calculate position
-            x: float = start_x + col * math.sqrt(2.2) * side_len
+            x = start_x + col * math.sqrt(2.2) * side_len
 
             if col % 2 == 0:
-                y: float = start_y - row * 1.75 * side_len
+                y = start_y - row * 1.75 * side_len
             else:
                 y = start_y - row * 1.75 * side_len - 0.85 * side_len
 
-            # Alternate colors
             if (row + col) % 2 == 0:
-                current_color: str = color1
+                current_color = color1
             else:
                 current_color = color2
 

@@ -116,7 +116,7 @@ def main() -> None:
             else:
                 y = start_y - row * 1.75 * side_len - 0.85 * side_len
 
-            if (row + col) % 2 == 0:
+            if (row - col // 2) % 2 == 0:
                 current_color = color1
             else:
                 current_color = color2

@@ -14,7 +14,8 @@ def get_num_hexagons() -> int:
     """
     while True:
         try:
-            n = int(input("Пожалуйста, введите количество шестиугольников, располагаемых в ряд: "))
+            n = int(input("Пожалуйста, введите количество шестиугольников,
+            располагаемых в ряд: "))
             if 4 <= n <= 20:
                 return n
             else:
@@ -30,7 +31,8 @@ def get_color_choice() -> str:
     Returns:
         str: Turtle color string for the selected color
     """
-    valid_colors = ['красный', 'синий', 'зеленый', 'желтый', 'оранжевый', 'пурпурный', 'розовый']
+    valid_colors = ['красный', 'синий', 'зеленый', 'желтый',
+    'оранжевый', 'пурпурный', 'розовый']
     color_map = {
         'красный': 'red',
         'синий': 'blue',

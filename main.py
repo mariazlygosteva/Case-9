@@ -80,7 +80,7 @@ def draw_hexagon(x: float, y: float, side_len: float, color: str) -> None:
 
 def main() -> None:
     """Main function to draw the hexagon pattern."""
-    # Set up the turtle window
+    # Set up the turtle window.
     turtle.setup(500, 500)
     turtle.tracer(0, 0)
 
@@ -88,7 +88,7 @@ def main() -> None:
     screen.tracer(0)
     turtle.hideturtle()
 
-    # Get user input
+    # Get user input.
     print("Выбор первого цвета:")
     color1 = get_color_choice()
 
@@ -97,16 +97,16 @@ def main() -> None:
 
     n = get_num_hexagons()
 
-    # Calculate side length to fit in window
+    # Calculate side length to fit in window.
     side_len = min(500 / (n * math.sqrt(2.2)), 500 / (n * 1))
 
-    # Calculate total dimensions and starting position
+    # Calculate total dimensions and starting position.
     total_width = n * math.sqrt(2.6) * side_len
     total_height = n * 1.97 * side_len
     start_x = -total_width / 2 + math.sqrt(3) * side_len / 2
     start_y = total_height / 2 - 1.5 * side_len / 2
 
-    # Draw the hexagon pattern
+    # Draw the hexagon pattern.
     for row in range(n):
         for col in range(n):
             x = start_x + col * math.sqrt(2.2) * side_len
@@ -125,7 +125,7 @@ def main() -> None:
 
         screen.update()
 
-    # Final display
+    # Final display.
     screen.update()
     turtle.done()
 
